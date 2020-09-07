@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body,h3{
+        margin: 0;
+    }
+    h3{
+        font-size: 1.3em;
+        font-weight: lighter;
+        margin-bottom: 10px;
+    }
+    h2{
+        color: blue;
+    }
+    form{
+        width: 500px;
+        border: 1px solid  blue;
+        margin: 8vh auto;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    section{
+        margin: 10px auto;
+        border-radius: 5px;
+        background-color: lightgray;
+        padding: 10px;
+    }
+    section:nth-of-type(1){
+        display: flex;
+        flex-direction: column;
+    }
+    section:nth-of-type(4){
+        display: flex;
+        justify-content: center;
+    }
+    
+    [type=button]{
+        width: 90%;
+        background-color: blue;
+        box-sizing: border-box;
+        text-align: center;
+        height: 30px;
+        color: white;
+        text-transform: uppercase;
+        border-radius: 5px;
+    }
+</style>
+<body>
+    <form action="">
+        <section>
+            <h3>Was soll berechnet werden?</h3>
+            <div>
+                <input type="radio" name="MwSt" id="NettozuBrutto" value="" checked>
+                <label for="NettozuBrutto">Mehrwertsteuer aufschlagen (Netto zu Brutto)</label>
+            </div>
+            <div>
+                <input type="radio" name="MwSt" id="BruttozuNetto" value="">
+                <label for="NettozuBrutto">Mehrwertsteuer abziehen (Brutto zu Netto)</label>
+            </div>
+        </section>
+        <section>
+            <h3>Mehrwertsteuer</h3>
+            
+                <input type="radio" name="%" id="19" value="19" checked>
+                <label for="19">19 %</label>
+            
+                <input type="radio" name="%" id="7">
+                <label for="7">7 %</label>
+        </section>
+        <section>
+            <h3>Nettobetrag (Preis ohne Mehrwertsteuer) in Euro *</h3>
+            <input type="text" name="" id="eingabeEuro" placeholder="10,00">
+        </section>
+        <section>
+            <input type="button" value="Berechnen" onclick="berechnen()">
+        </section>
+        <section>
+            <h4>Ergebnis</h4>
+            <div>
+                <h3>Mehrwertsteuerbetrag</h3>
+                <h2 id="ausgabeMwst"></h2>
+            </div>
+            <div>
+                <h3>Bruttobetrag (Endpreis)</h3>
+                <h2 id="ausgabeEndpreis"></h2>
+            </div>
+        </section>
+        
+        </form>
+        
+    
+        <script src="main.js"></script>
+</body>
+</html>
